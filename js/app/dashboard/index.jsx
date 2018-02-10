@@ -10,7 +10,7 @@ import TaskList from './components/TaskList'
 import UserPanel from './components/UserPanel'
 import UserPanelList from './components/UserPanelList'
 import MapProxy from './components/MapProxy'
-import TaskRangePicker from './widgets/TaskRangePicker'
+import TaskRangePicker from '../widgets/TaskRangePicker'
 import dragula from 'dragula';
 import _ from 'lodash';
 import L from 'leaflet'
