@@ -123,6 +123,12 @@ class Task
      */
     private $updatedAt;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Task")
+     * @ORM\JoinColumn(name="previous_task_id", referencedColumnName="id", nullable=true)
+     */
+    private $previous;
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
@@ -218,6 +224,18 @@ class Task
     public function getEvents()
     {
         return $this->events;
+    }
+
+    public function getPrevious()
+    {
+        return $this->previous;
+    }
+
+    public function setPrevious(Task $previous)
+    {
+        $this->previous = $previous;
+
+        return $this;
     }
 
     public function isAssigned()
